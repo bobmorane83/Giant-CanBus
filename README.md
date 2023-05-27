@@ -104,7 +104,7 @@ nohup canbus can0 -l
 
 For now, I have only two files :
 
-* One for the poweron/poweroff sequence : [file](https://github.com/bobmorane83/Giant-CanBus/blob/main/resources/logs/poweron-poweroff)
+* One for the poweron/poweroff sequence : [file](https://github.com/bobmorane83/Giant-CanBus/blob/main/resources/logs/poweron-poweroff.log)
 * One for a 15 minutes ride : [file](https://github.com/bobmorane83/Giant-CanBus/blob/main/resources/logs/ride1.log)
 
 # Decoding
