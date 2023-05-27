@@ -23,7 +23,7 @@ The connector pinout is the following :
 
 ![alt text](https://github.com/bobmorane83/Giant-CanBus/blob/main/resources/documents/connector.png)
 
-I solder a 2.54 connector on top of the board to be ready to snif
+I soldered a 2.54 connector on top of the board to be ready to snif
 
 ![alt text](https://github.com/bobmorane83/Giant-CanBus/blob/main/resources/photos/connector1.jpeg)
 
@@ -35,7 +35,7 @@ I took a Raspberry Pi 3 B+ and use two MCP2515 cheap chineese board to get acces
 
 ![alt text](https://github.com/bobmorane83/Giant-CanBus/blob/main/resources/photos/raspberry1.jpeg)
 
-To configure (only on board):
+To configure (only one board):
 
 In /boot/config.txt
 ```
@@ -50,20 +50,20 @@ sudo ip link set can0 down && sudo ip link set can0 up type can bitrate 500000 l
 ```
 I use listen-only for now (safer).
 
-and install can utils
+and installed can utils
 ```
 sudo apt-get install can-utils
 ```
 
-I also setup the Raspberry as Wifi AP.
+I also setted up the Raspberry as Wifi AP.
 
 # Let's bind all together
 
-I install the Raspbery in a small box
+I installed the Raspbery in a small box
 
 ![alt text](https://github.com/bobmorane83/Giant-CanBus/blob/main/resources/photos/box1.jpeg)
 
-Then connect the Ridecontrol One
+Then connected the Ridecontrol One
 
 ![alt text](https://github.com/bobmorane83/Giant-CanBus/blob/main/resources/photos/sniffer1.jpeg)
 
@@ -78,7 +78,7 @@ And attach to the bike
 ![alt text](https://github.com/bobmorane83/Giant-CanBus/blob/main/resources/photos/sniffer3.jpeg)
 
 * Blue : Ridecontrol One
-* Red : Raspberry Pi
+* Red : Raspberry Pi with CAN boards
 * Green : Ridecontrol One connected to the bike
 * Pink : Ridecontrol Evo command (not connected)
 * Pink arrow : Ridecontrol Evo display underneath the raspberry (with soft tissue to avoid scratches)
@@ -91,9 +91,22 @@ I just had to connect my phone to the wifi AP
 
 ![alt text](https://github.com/bobmorane83/Giant-CanBus/blob/main/resources/photos/raspwifi.jpeg)
 
+Check that all was OK
+![alt text](https://github.com/bobmorane83/Giant-CanBus/blob/main/resources/photos/terminal.jpeg)
+
 And start recording :
 
 ```
-canbus can0 -l
+nohup canbus can0 -l
 ```
 
+# Recording
+
+For now, I have only two files :
+
+* One for the poweron/poweroff sequence : [file](https://github.com/bobmorane83/Giant-CanBus/blob/main/resources/logs/poweron-poweroff)
+* One for a 15 minutes ride : [file](https://github.com/bobmorane83/Giant-CanBus/blob/main/resources/logs/ride1.log)
+
+# Decoding
+
+...
