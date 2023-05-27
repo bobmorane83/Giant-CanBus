@@ -10,3 +10,4 @@ I'am newbee on canbus, but this is a good way to play around with it and learn a
 My bike came with a ridecontrol One. This is fine, but I also bought a used Ridecontrol Evo with a large screen.
 So I installed the Ridecontrol Evo on the bike and remain with the One unused. And guess what ? I opened it ... of course.
 
+![alt text](https://github.com/bobmorane83/Giant-CanBus/blob/main/resources/photos/signal-2023-05-27-105611_010.jpeg)
