@@ -63,7 +63,7 @@ I installed the Raspbery in a small box
 
 <img src="./resources/photos/box1.jpeg" height="400" />
 
-Then connected the Ridecontrol One
+And with Ridecontrol One connected
 
 <img src="./resources/photos/sniffer1.jpeg" height="400" />
 
@@ -110,8 +110,8 @@ For now, I have only two files :
 
 # Cable
 
-I ordered this, let's see if it fits : [cable](https://www.amazon.fr/dp/B096VKQVWT?psc=1&smid=AQ1IBDB6G2RRD&ref_=chk_typ_imgToDp)
-
-# Cable
+To connect to the bike I ordered this [cable](https://www.amazon.fr/dp/B096VKQVWT?psc=1&smid=AQ1IBDB6G2RRD&ref_=chk_typ_imgToDp), let's see if it fits ...
 
 # Decoding
+
+Ongoing ...
