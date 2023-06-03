@@ -10,7 +10,7 @@ So I installed the Ridecontrol Evo on the bike and remain with the One unused. A
 
 # Ridecontrol One
 
-![alt text](https://github.com/bobmorane83/Giant-CanBus/blob/main/resources/photos/ICs.jpeg)
+<img src="./resources/photos/ICs.jpeg" height="400" />
 
 * Red : Nordic nRF52832, Main microcontroller in charge of main processing and bluetooth.
 * Blue : Microchip MCP25625, External CAN Controller with Integrated Transceiver
@@ -21,11 +21,11 @@ Be aware that you will distroy the seal when opening it. You'll need a silicon s
 
 The connector pinout is the following :
 
-![alt text](https://github.com/bobmorane83/Giant-CanBus/blob/main/resources/documents/connector.png)
+<img src="./resources/documents/connector.png" height="400" />
 
 I soldered a 2.54 connector on top of the board to be ready to snif
 
-![alt text](https://github.com/bobmorane83/Giant-CanBus/blob/main/resources/photos/connector1.jpeg)
+<img src="./resources/photos/connector1.jpeg" height="400" />
 
 REM : Note that the Ridecontrol One output 5V (as the Evo). This is great, as you can power the Raspberry with it ! Seems that the current delivered is enought !
 
@@ -33,7 +33,7 @@ REM : Note that the Ridecontrol One output 5V (as the Evo). This is great, as yo
 
 I took a Raspberry Pi 3 B+ and use two MCP2515 cheap chineese board to get access to CAN Bus.
 
-![alt text](https://github.com/bobmorane83/Giant-CanBus/blob/main/resources/photos/raspberry1.jpeg)
+<img src="./resources/photos/raspberry1.jpeg" height="400" />
 
 To configure (only one board):
 
@@ -61,11 +61,11 @@ I also setted up the Raspberry as Wifi AP.
 
 I installed the Raspbery in a small box
 
-![alt text](https://github.com/bobmorane83/Giant-CanBus/blob/main/resources/photos/box1.jpeg)
+<img src="./resources/photos/box1.jpeg" height="400" />
 
 Then connected the Ridecontrol One
 
-![alt text](https://github.com/bobmorane83/Giant-CanBus/blob/main/resources/photos/sniffer1.jpeg)
+<img src="./resources/photos/sniffer1.jpeg" height="400" />
 
 The connection is quite simple :
 * 5V OUT from the Ridecontrol to Raspberry 5V input on USB micro port
@@ -75,7 +75,7 @@ The connection is quite simple :
 
 And attach to the bike
 
-![alt text](https://github.com/bobmorane83/Giant-CanBus/blob/main/resources/photos/sniffer3.jpeg)
+<img src="./resources/photos/sniffer3.jpeg" height="400" />
 
 * Blue : Ridecontrol One
 * Red : Raspberry Pi with CAN boards
@@ -83,16 +83,17 @@ And attach to the bike
 * Pink : Ridecontrol Evo command (not connected)
 * Pink arrow : Ridecontrol Evo display underneath the raspberry (with soft tissue to avoid scratches)
 
-Well tighted !
+Well tightened !
 
 # Sniffing
 
 I just had to connect my phone to the wifi AP
 
-![alt text](https://github.com/bobmorane83/Giant-CanBus/blob/main/resources/photos/raspwifi.jpeg)
+<img src="./resources/photos/raspwifi.jpeg" height="300" />
 
 Check that all was OK
-![alt text](https://github.com/bobmorane83/Giant-CanBus/blob/main/resources/photos/terminal.jpeg)
+
+<img src="./resources/photos/terminal.jpeg" height="300" />
 
 And start recording :
 
@@ -104,9 +105,13 @@ nohup canbus can0 -l
 
 For now, I have only two files :
 
-* One for the poweron/poweroff sequence : [file](https://github.com/bobmorane83/Giant-CanBus/blob/main/resources/logs/poweron-poweroff.log)
-* One for a 15 minutes ride : [file](https://github.com/bobmorane83/Giant-CanBus/blob/main/resources/logs/ride1.log)
+* One for the poweron/poweroff sequence : [file](./resources/logs/poweron-poweroff.log)
+* One for a 15 minutes ride : [file](./resources/logs/ride1.log)
+
+# Cable
+
+I ordered this, let's see if it fits : [cable](https://www.amazon.fr/dp/B096VKQVWT?psc=1&smid=AQ1IBDB6G2RRD&ref_=chk_typ_imgToDp)
+
+# Cable
 
 # Decoding
-
-...
