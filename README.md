@@ -110,7 +110,7 @@ For now, I have only two files :
 
 # Cable
 
-To connect to the bike without having to use the solder iron too much ;), I ordered this [cable](https://www.amazon.fr/dp/B096VKQVWT?psc=1&smid=AQ1IBDB6G2RRD&ref_=chk_typ_imgToDp). (You can find it on Aliexpress a lot cheaper but have to wait for delivery !)
+To connect to the bike without having to use the solder iron too much ;), I ordered this [cable](https://www.amazon.fr/dp/B096VKQVWT?psc=1&smid=AQ1IBDB6G2RRD&ref_=chk_typ_imgToDp) (quite expensive, but you can find it on [Aliexpress](https://fr.aliexpress.com/item/1005005361586979.html) a lot cheaper but have to wait weeks for delivery !)
 
 <img src="./resources/photos/cable.jpeg" height="300" />
 
