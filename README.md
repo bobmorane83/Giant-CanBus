@@ -5,7 +5,7 @@ The motor is a Giant Syncdrive pro aka Yamaha PW-X. This motor (and it's battery
 
 I'am newbie on canbus, but this is a good way to play around with it and learn a lot !
 
-My bike came with a ridecontrol One. This is fine, but I also bought a used Ridecontrol Evo with a large screen.
+My bike came with a [Ridecontrol One](https://www.giant-bicycles.com/us/showcase/ridecontrol-one) (not the Ant+ one). This is fine, but I also bought a used [Ridecontrol Evo](https://www.giant-bicycles.com/us/showcase/ridecontrol-evo) with a large screen.
 So I installed the Ridecontrol Evo on the bike and remain with the One unused. And guess what ? I opened it ... of course.
 
 # Ridecontrol One
@@ -110,8 +110,12 @@ For now, I have only two files :
 
 # Cable
 
-To connect to the bike I ordered this [cable](https://www.amazon.fr/dp/B096VKQVWT?psc=1&smid=AQ1IBDB6G2RRD&ref_=chk_typ_imgToDp), let's see if it fits ...
+To connect to the bike without having to use the solder iron too much ;), I ordered this [cable](https://www.amazon.fr/dp/B096VKQVWT?psc=1&smid=AQ1IBDB6G2RRD&ref_=chk_typ_imgToDp). (You can find it on Aliexpress a lot cheaper but have to wait for delivery !)
+
+<img src="./resources/photos/cable.jpeg" height="300" />
 
 # Decoding
+
+My idea is to playback the recorded files to the Ridecontrol Evo and, thanks to the screen, see if I can isolate frames for speed, SoC, SoH ...
 
 Ongoing ...
