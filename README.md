@@ -98,7 +98,7 @@ Check that all was OK
 And start recording :
 
 ```
-nohup canbus can0 -l
+nohup candump can0 -l
 ```
 
 # Recording
@@ -114,8 +114,16 @@ To connect to the bike without having to use the solder iron too much ;), I orde
 
 <img src="./resources/photos/cable.jpeg" height="300" />
 
+Let's cut the cable in two and make a high end sniffer board to avoid to open the Ridecontrol Evo !
+
+<img src="./resources/photos/board.jpeg" height="300" /> <img src="./resources/photos/board2.jpeg" height="300" />
+
 # Decoding
 
 My idea is to playback the recorded files to the Ridecontrol Evo and, thanks to the screen, see if I can isolate frames for speed, SoC, SoH ...
+
+But it's difficult to identify which device send which frame, so as my raspberry has two CAN interfaces, I will setup a bridge (following this [setup](https://www.embeddedpi.com/documentation/iso-can-duo/embeddedpo-dual-can-card)).
+
+I'll also use Python-can lib.
 
 Ongoing ...
