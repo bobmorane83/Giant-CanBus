@@ -126,4 +126,85 @@ But it's difficult to identify which device send which frame, so as my raspberry
 
 I'll also use Python-can lib.
 
-Ongoing ...
+# Setup
+
+Here is my setup
+
+Bike Batterie/Motor <-- CAN -->  Pi-CAN0 - Python Script - Pi-CAN1 <-- CAN --> Bike Display (Ridecontrol Evo)
+
+And device conf :
+```
+$ ip link set can0 up type can bitrate 500000 listen-only off triple-sampling on restart-ms 0
+$ ip link set can1 up type can bitrate 500000 listen-only off triple-sampling on restart-ms 0
+````
+
+The python script is really simple :
+```
+from time import sleep
+import can
+
+def main():
+    bus0 = can.Bus('can0', bustype='socketcan', bitrate=500000, receive_own_messages=False)
+    bus1 = can.Bus('can1', bustype='socketcan', bitrate=500000, receive_own_messages=False)
+
+    def parseData0(msg: can.Message):
+        bus1.send(msg)
+        print(f"B->S {msg}")
+
+    def parseData1(msg: can.Message):
+        bus0.send(msg)
+        print(f"S->B {msg}")
+
+    notifier2 = can.Notifier(bus1,[parseData1])
+    notifier = can.Notifier(bus0,[parseData0])
+
+    try:
+        while True:
+            sleep(100)
+    except Exception as e:
+        print(e)
+    finally:
+        notifier.stop()
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except KeyboardInterrupt:
+        print("Receiver stopped")
+    except Exception as e:
+        print(e)
+```
+
+Unfortunatly for now I only get (when powering on the display) :
+```
+S->B Timestamp: 1688833222.608162        ID: 0004    S Rx E              DL:  8    00 04 00 00 00 00 00 00     Channel: can1
+S->B Timestamp: 1688833222.609674        ID: 0004    S Rx E              DL:  8    00 10 00 00 00 00 00 00     Channel: can1
+B->S Timestamp: 1688833222.619092        ID: 0004    S Rx E              DL:  8    00 08 00 00 00 00 00 00     Channel: can0
+B->S Timestamp: 1688833222.621396        ID: 0004    S Rx E              DL:  8    00 20 00 00 00 00 00 00     Channel: can0
+```
+(S : Screen, B : Battery)
+
+That's it (see the Errors ?) ... No more communication ... :(
+
+And I do have lot of errors on interface :
+```
+pi@pi:~/src $ ip -details -statistics link show can0
+3: can0: <NOARP,UP,LOWER_UP,ECHO> mtu 16 qdisc pfifo_fast state UP mode DEFAULT group default qlen 10
+    link/can  promiscuity 0 minmtu 0 maxmtu 0 
+    can <TRIPLE-SAMPLING> state ERROR-PASSIVE restart-ms 0 
+          bitrate 500000 sample-point 0.875 
+          tq 125 prop-seg 6 phase-seg1 7 phase-seg2 2 sjw 1
+          mcp251x: tseg1 3..16 tseg2 2..8 sjw 1..4 brp 1..64 brp-inc 1
+          clock 8000000 
+          re-started bus-errors arbit-lost error-warn error-pass bus-off
+          0          0          0          15         15         3         numtxqueues 1 numrxqueues 1 gso_max_size 65536 gso_max_segs 65535 
+    RX: bytes  packets  errors  dropped missed  mcast   
+    8          1        0       0       0       0       
+    TX: bytes  packets  errors  dropped carrier collsns 
+    0          0        14      10330   0       0   
+```
+
+(same on can1)
+
+Don't know why for now, any help ?
